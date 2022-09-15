@@ -40,5 +40,13 @@ def run_test(test, config, logger):
     test = imp.load_source('test', test)
     test.run(config, logger)
 
+def main():
+    """Main"""
+    args = get_args()
+    config = get_config()
+    logger = get_logger()
+    run_test(args.test, config, logger)
+    
+
 from datetime import datetime
 from datetime import timedelta
