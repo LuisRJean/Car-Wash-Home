@@ -46,7 +46,10 @@ def main():
     config = get_config()
     logger = get_logger()
     run_test(args.test, config, logger)
-    
+
+if __name__ == '__main__':
+    main()  # pylint: disable=no-value-for-parameter
+
 
 from datetime import datetime
 from datetime import timedelta
