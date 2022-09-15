@@ -34,5 +34,11 @@ def get_args():
     args = parser.parse_args()
     return args
 
+def run_test(test, config, logger):
+    """Run test"""
+    logger.info('Running test: %s', test)
+    test = imp.load_source('test', test)
+    test.run(config, logger)
+
 from datetime import datetime
 from datetime import timedelta
