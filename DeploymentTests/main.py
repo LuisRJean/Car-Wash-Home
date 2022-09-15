@@ -25,5 +25,14 @@ def get_logger():
     logger.addHandler(ch)
     return logger
 
+def get_args():
+    """Get args"""
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-t', '--test', help='Test to run', required=True)
+    parser.add_argument('-c', '--config', help='Config file', required=False)
+    parser.add_argument('-l', '--log', help='Log file', required=False)
+    args = parser.parse_args()
+    return args
+
 from datetime import datetime
 from datetime import timedelta
